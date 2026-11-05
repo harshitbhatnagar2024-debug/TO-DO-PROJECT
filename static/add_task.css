@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.add_task_box{
+    /* border: 2px solid; */
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.add_task_bar{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.btn_box{
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+.save{
+    background-color: #0C7BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.cancel{
+    background-color: #778087;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+input, textarea{
+    width: 100%;
+    border: 0.5px solid lightgray;
+}

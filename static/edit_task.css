@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.edit_task_bar {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.edit_task_box {
+    width: 80%;
+    margin: auto;
+}
+
+.edit_task_box h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.edit_task_box label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.btn_box {
+    display: flex;
+    gap: 5px;
+}
+
+.save {
+    background-color: #007bff;
+    color: white;
+    padding: 9px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: #778087;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
