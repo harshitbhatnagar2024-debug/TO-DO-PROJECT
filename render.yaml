@@ -1,0 +1,22 @@
+databases:
+  - name: todo-project-db
+    plan: free
+    databaseName: todo_project
+    user: todo_project
+
+services:
+  - type: web
+    name: todo-project
+    runtime: python
+    plan: free
+    buildCommand: ./build.sh
+    startCommand: gunicorn todo_project.wsgi:application
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: todo-project-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "False"

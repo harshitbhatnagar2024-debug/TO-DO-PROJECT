@@ -103,3 +103,22 @@ Follow the prompts, then sign in on the admin page. Tasks are not currently adde
 ## Settings for deployment
 
 The defaults are for local development. Before putting the site on the internet, set a private `DJANGO_SECRET_KEY`, set `DJANGO_DEBUG=False`, and set `DJANGO_ALLOWED_HOSTS` to the real host names. Do not publish a real secret key in source control.
+
+## Put the site online with Render
+
+Render can build this Django project from its GitHub repository and give it a public `onrender.com` web address. The project includes a `build.sh` script for installing packages, collecting CSS files, and applying database migrations. It uses SQLite on your computer and uses PostgreSQL when Render provides `DATABASE_URL`.
+
+1. Save and upload the latest project changes to GitHub:
+
+   ```bash
+   git add .gitignore README.md requirements.txt build.sh render.yaml todo_project/settings.py
+   git commit -m "Prepare Django app for deployment"
+   git push origin main
+   ```
+
+2. Sign in to [Render](https://render.com/), open **Blueprints**, and choose **New Blueprint Instance**.
+3. Connect the GitHub repository for this project and select the `main` branch.
+4. Render reads `render.yaml` to create the web service and database. Review the services and choose **Apply**.
+5. Wait for the build and deployment to finish. Render will then show the public web address for your app. Open it and check that the task page loads before submitting it.
+
+Render's free web services can take about a minute to wake after inactivity. Free PostgreSQL databases expire after 30 days, so check Render's current plan limits if you need the submitted site to stay online longer.
